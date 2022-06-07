@@ -1,4 +1,4 @@
-import styled, { css, CSSProp } from 'styled-components';
+import styled from 'styled-components';
 import { Colors } from '../../styles/colors';
 import { pxToRem } from '../../utils';
 
@@ -7,13 +7,33 @@ export const FooterContainer = styled.div`
   padding: 0 60px;
   background-color: ${Colors.primary_dark};
 
+  @media (max-width: 800px) {
+    padding: 0 20px;
+  }
+
   .newsletter {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     border-bottom: 1px solid rgba(72,57,255, 0.1);
     padding: 80px 0;
+
+    @media (max-width: 1600px) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    form {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+
+      @media (max-width: 1024px) {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
 
     h3 {
       font-family: 'Poppins';
@@ -23,10 +43,15 @@ export const FooterContainer = styled.div`
       letter-spacing: 0.02em;
       color: ${Colors.white};
       margin-bottom: 13px;
+
+      @media (max-width: 1024px) {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
     }
 
     p {
-      width: 434px;
       font-family: 'Poppins';
       font-weight: 500;
       font-size: ${pxToRem(16)};
@@ -56,6 +81,7 @@ export const FooterContainer = styled.div`
       height: 60px;
       width: 100%;
       background-color: ${Colors.purple};
+      border: none;
       border-radius: 10px;
       font-family: 'Poppins';
       font-weight: 800;
@@ -70,6 +96,17 @@ export const FooterContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 80px 0;
+
+    @media (max-width: 1400px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 900px) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
 
     p {
       font-family: 'Poppins';
@@ -131,6 +168,12 @@ export const FooterContainer = styled.div`
     width: 100%;
     padding-bottom: 24px;
 
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
     p {
       font-family: 'Poppins';
       font-weight: 400;
@@ -139,6 +182,10 @@ export const FooterContainer = styled.div`
       letter-spacing: 0.02em;
       color: ${Colors.white};
       opacity: 0.75;
+
+      @media (max-width: 1100px) {
+        text-align: center;
+      }
     }
 
     span {

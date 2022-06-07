@@ -1,5 +1,6 @@
 import { Tag } from "../Tag";
 import { CarouselContainer } from "./styles";
+import { Card } from "../Card";
 
 interface ICarouselData {
   developer: string;
@@ -30,28 +31,9 @@ export function Carousel({
           <img src="/assets/icons/nav-right.svg" alt="right" />
         </span>
       </div>
-      <div className="games">
+      <div className="card">
         {carouselData.map(item => (
-          <div key={item.title} className="games-content">
-            <div className="poster">
-              <img src={item.poster} alt={item.title} />
-              <Tag
-                type={item.tag_type}
-                title={item.tag_title}
-              />
-            </div>
-            <span>
-              <div className="top">
-                <p className="developer">{item.developer}</p>
-                <p className="title">{item.title}</p>
-              </div>
-              <div className="bottom">
-                <p className="old-price">{item.old_price}</p>
-                <p className="new-price">{item.new_price}</p>
-                <p className="payment-conditions">{item.payment_conditions}</p>
-              </div>
-            </span>
-          </div>
+          <Card cardData={item} />
         ))}
       </div>
     </CarouselContainer>

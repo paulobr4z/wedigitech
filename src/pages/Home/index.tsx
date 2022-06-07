@@ -69,8 +69,7 @@ export function Home() {
         carouselData={HighlightsWeekData}
       />
       <OtherHighlights>
-        <span>
-          <img src="/assets/img/mario_banner.png" alt="mario" />
+        <div className="mario">
           <div className="other-highlights-content">
             <h2>Sessão Nostalgia</h2>
             <p>Encontre os jogos favoritos da sua infância.</p>
@@ -79,9 +78,8 @@ export function Home() {
               typeButton="medium"
             />
           </div>
-        </span>
-        <span>
-          <img src="/assets/img/fifa_banner.png" alt="fifa" />
+        </div>
+        <div className="fifa">
           <div className="other-highlights-content">
             <h2>No clima das Olimpíadas</h2>
             <p>Os melhores jogos esportivos estão aqui.</p>
@@ -90,7 +88,7 @@ export function Home() {
               typeButton="medium"
             />
           </div>
-        </span>
+        </div>
       </OtherHighlights>
       <Carousel
         title="Aproveite nossas promoções"

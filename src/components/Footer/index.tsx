@@ -1,5 +1,4 @@
 import { FooterContainer } from "./styles";
-import { FaWhatsapp } from "react-icons/fa";
 
 export function Footer() {
   return(
@@ -9,12 +8,14 @@ export function Footer() {
           <h3>Se inscreva na newsletter</h3>
           <p>Receba no seu e-mail nossas novidades e cupons de desconto.</p>
         </span>
-        <input type="text" placeholder="Digite seu nome" />
-        <input type="text" placeholder="Digite seu e-mail" />
-        <input type="text" placeholder="Qual seu videogame?" />
-        <button>
-          Cadastrar
-        </button>
+        <form>
+          <input type="text" placeholder="Digite seu nome" />
+          <input type="text" placeholder="Digite seu e-mail" />
+          <input type="text" placeholder="Qual seu videogame?" />
+          <button>
+            Cadastrar
+          </button>
+        </form>
       </div>
       <div className="links">
         <span>
@@ -55,7 +56,7 @@ export function Footer() {
             </li>
           </ul>
         </span>
-        <span>
+        {/* <span>
           <div className="instagram-title">
             <h5>Siga @wedigi</h5>
             <img src="/assets/icons/instagram.svg" alt="instagram" />
@@ -65,7 +66,7 @@ export function Footer() {
             <img src="/assets/img/post_002.png" alt="post_002" />
             <img src="/assets/img/post_003.png" alt="post_003" />
           </div>
-        </span>
+        </span> */}
       </div>
       <div className="rights-reserved">
         <span>

@@ -189,10 +189,18 @@ export const ComingSoon = styled.div`
   width: 100%;
   padding: 0 60px;
 
+  @media (max-width: 800px) {
+    padding: 0 20px;
+  }
+
   .coming-soon-wrapper {
     position: relative;
     height: 750px;
     width: 100%;
+
+    @media (max-width: 800px) {
+      height: 374px;
+    }
 
     img {
       height: 100%;
@@ -209,6 +217,19 @@ export const ComingSoon = styled.div`
       flex-direction: column;
       align-items: flex-end;
 
+      @media (max-width: 1500px) {
+        right: 100px;
+      }
+
+      @media (max-width: 1200px) {
+        right: 50px;
+      }
+
+      @media (max-width: 800px) {
+        top: 80px;
+        right: 15px;
+      }
+
       h1 {
         position: relative;
         font-family: 'Poppins';
@@ -216,6 +237,14 @@ export const ComingSoon = styled.div`
         font-size: ${pxToRem(46)};
         line-height: 52px;
         color: ${Colors.primary_dark};
+
+        @media (max-width: 1300px) {
+          font-size: ${pxToRem(32)};
+        }
+
+        @media (max-width: 1024px) {
+          font-size: ${pxToRem(28)};
+        }
 
         &::before {
           position: absolute;
@@ -233,6 +262,14 @@ export const ComingSoon = styled.div`
         font-size: ${pxToRem(46)};
         line-height: 52px;
         color: ${Colors.primary_dark};
+
+        @media (max-width: 1300px) {
+          font-size: ${pxToRem(32)};
+        }
+
+        @media (max-width: 1024px) {
+          font-size: ${pxToRem(28)};
+        }
       }
 
       p {
@@ -257,9 +294,20 @@ export const OtherHighlights = styled.div`
   width: 100%;
   gap: 28px;
 
-  span {
+  @media (max-width: 800px) {
+    padding: 0 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .mario, .fifa {
     position: relative;
     width: 100%;
+    height: 585px;
+    background-image: url("/assets/img/mario_banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px;
 
     &::before {
       content: "";
@@ -269,19 +317,21 @@ export const OtherHighlights = styled.div`
       border-radius: 4px;
       background: linear-gradient(180deg, rgba(72, 57, 255, 0) 0%, #4839FF 79.83%);
     }
+  }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 4px;
-    }
+  .fifa {
+    background-image: url("/assets/img/fifa_banner.png");
   }
 
   .other-highlights-content {
     position: absolute;
     bottom: 35px;
     left: 40px;
+
+    @media (max-width: 800px) {
+      left: 20px;
+      bottom: 20px;
+    }
 
     h2 {
       position: relative;
@@ -292,6 +342,10 @@ export const OtherHighlights = styled.div`
       letter-spacing: 0.02em;
       color: ${Colors.white};
       margin-bottom: 15px;
+
+      @media (max-width: 800px) {
+        font-size: ${pxToRem(28)};
+      }
 
       &::before {
         content: "";

@@ -85,6 +85,7 @@ export const HeaderMobileMenuSide = styled.div<ISearch>`
   max-width: 425px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
+  z-index: 999;
 
   .userContent {
     display: flex;

@@ -1,41 +1,13 @@
 import styled from 'styled-components';
 import { Colors } from '../../styles/colors';
-import { Fonts } from '../../styles/fonts';
 import { pxToRem } from '../../utils';
 
-export const CarouselContainer = styled.div`
+export const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
-  padding: 160px 60px;
 
-  @media (max-width: 800px) {
-    padding: 60px 20px;
-  }
-
-  .title-and-control {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 50px;
-    padding-left: 15px;
-    border-left: 5px solid ${Colors.purple};
-    margin-bottom: 60px;
-
-    h3 {
-      font: ${Fonts.heading_3};
-      color: ${Colors.white};
-    }
-
-    span > img {
-      margin-right: 15px;
-    }
-
-    img {
-      cursor: pointer;
-    }
-  }
-
-  .card {
+  .game {
     display: flex;
     column-gap: 30px;
     overflow: hidden;
@@ -47,6 +19,9 @@ export const CarouselContainer = styled.div`
 
       img {
         border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
       }
 
       span {
