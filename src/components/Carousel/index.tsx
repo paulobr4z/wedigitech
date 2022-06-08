@@ -1,4 +1,3 @@
-import { Tag } from "../Tag";
 import { CarouselContainer } from "./styles";
 import { Card } from "../Card";
 

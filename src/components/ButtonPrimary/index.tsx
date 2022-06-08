@@ -16,7 +16,7 @@ export function ButtonPrimary({
   return (
     <Button typeButton={typeButton}>
       {textButton}
-      {hasIcon && <img src="/assets/icons/basket.svg" />}
+      {hasIcon && <img src="/assets/icons/basket.svg" alt="basket" />}
     </Button>
   ) 
 }
