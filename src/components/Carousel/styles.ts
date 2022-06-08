@@ -57,7 +57,6 @@ export const CarouselContainer = styled.div`
         width: 100%;
         color: ${Colors.white};
         padding: 16px;
-        font-family: 'Poppins', sans-serif;
         height: 166px;
 
         .developer {

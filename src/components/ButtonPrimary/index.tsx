@@ -5,15 +5,18 @@ import {
 interface IButtonPrimary {
   textButton: string;
   typeButton: "small" | "medium" | "large"
+  hasIcon?: boolean;
 }
 
 export function ButtonPrimary({
   textButton,
-  typeButton
+  typeButton,
+  hasIcon = false
 }:IButtonPrimary) {
   return (
     <Button typeButton={typeButton}>
       {textButton}
+      {hasIcon && <img src="/assets/icons/basket.svg" />}
     </Button>
   ) 
 }

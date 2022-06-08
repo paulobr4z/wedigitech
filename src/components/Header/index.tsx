@@ -41,7 +41,13 @@ export function Header() {
           <div className="right-content">
             <InputSearch />
             <img src="./assets/icons/user.svg" alt="user" />
-            <img src="./assets/icons/basket.svg" alt="basket" />
+
+            <div className="basket">
+              <img src="./assets/icons/basket.svg" alt="basket" />
+              <span>
+                0
+              </span>
+            </div>
           </div>
         </main>
       </HeaderMenu>

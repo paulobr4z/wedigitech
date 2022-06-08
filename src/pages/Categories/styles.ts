@@ -18,6 +18,10 @@ export const CategoriesBanner = styled.div`
   background-color: ${Colors.secundary};
   column-gap: 30px;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+
   .left-content {
     display: flex;
     flex-direction: column;
@@ -25,8 +29,15 @@ export const CategoriesBanner = styled.div`
     justify-content: center;
     padding-left: 60px;
 
+    @media (max-width: 1024px) {
+      padding: 60px;
+    }
+
+    @media (max-width: 800px) {
+      padding: 60px 20px;
+    }
+
     h1 {
-      font-family: 'Poppins';
       font-weight: 900;
       font-size: ${pxToRem(46)};
       line-height: 52px;
@@ -36,12 +47,15 @@ export const CategoriesBanner = styled.div`
 
     p {
       width: 580px;
-      font-family: 'Poppins';
       font-weight: 600;
       font-size: ${pxToRem(14)};
       line-height: 22px;
       letter-spacing: 0.02em;
       color: ${Colors.white};
+
+      @media (max-width: 800px) {
+        width: 100%;
+      }
     }
   }
 
@@ -65,8 +79,11 @@ export const GamesContainer = styled.div<ICategoriesPage>`
     width: 100%;
     padding: 60px;
 
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
     h6 {
-      font-family: 'Poppins';
       font-weight: 900;
       font-size: 14px;
       line-height: 20px;
@@ -90,7 +107,67 @@ export const GamesContainer = styled.div<ICategoriesPage>`
       }
 
       p {
-        font-family: 'Poppins';
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.05em;
+        color: ${Colors.white};
+      }
+    }
+  }
+
+  .games-filter-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+    padding: 60px;
+
+    @media (min-width: 1025px) {
+      display: none;
+    }
+
+    @media (max-width: 800px) {
+      padding: 60px 20px;
+    }
+
+    h6 {
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.05em;
+      color: ${Colors.white};
+      padding-bottom: 30px;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .filter, .order {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 15px;
+      padding: 15px 35px;
+      background-color: transparent;
+      border: 1px solid ${Colors.white};
+      border-radius: 5px;
+      cursor: pointer;
+
+      @media (max-width: 600px) {
+        padding: 10px 15px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      p {
         font-weight: 900;
         font-size: 14px;
         line-height: 20px;
@@ -125,7 +202,6 @@ export const GamesContainer = styled.div<ICategoriesPage>`
 
       h6 {
         position: relative;
-        font-family: 'Poppins';
         font-weight: 800;
         font-size: 16px;
         line-height: 24px;
@@ -155,7 +231,6 @@ export const GamesContainer = styled.div<ICategoriesPage>`
           column-gap: 10px;
 
           p {
-            font-family: 'Poppins';
             font-weight: 500;
             font-size: 12px;
             line-height: 20px;
@@ -189,7 +264,6 @@ export const GamesContainer = styled.div<ICategoriesPage>`
       border-radius: 5px;
       border: 2px solid ${Colors.white};
 
-      font-family: 'Poppins';
       font-weight: 900;
       font-size: 14px;
       line-height: 20px;

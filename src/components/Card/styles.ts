@@ -32,7 +32,6 @@ export const CardContainer = styled.div`
         width: 100%;
         color: ${Colors.white};
         padding: 16px;
-        font-family: 'Poppins', sans-serif;
         height: 166px;
 
         .developer {
@@ -75,6 +74,8 @@ export const CardContainer = styled.div`
 
     .poster {
       position: relative;
+      height: 417px;
+      width: 356px;
     }
   }
 `;

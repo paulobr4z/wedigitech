@@ -67,7 +67,6 @@ export const HeaderMobileMenu = styled.div<ISearch>`
       border: none;
       color: rgba(255,255,255,0.7);
       font-size: 0.875rem;
-      font-family: 'Poppins', sans-serif;
       width: 100%;
       margin-right: 16px;
     }

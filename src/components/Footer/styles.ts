@@ -36,7 +36,6 @@ export const FooterContainer = styled.div`
     }
 
     h3 {
-      font-family: 'Poppins';
       font-weight: 800;
       font-size: ${pxToRem(24)};
       line-height: 32px;
@@ -52,7 +51,6 @@ export const FooterContainer = styled.div`
     }
 
     p {
-      font-family: 'Poppins';
       font-weight: 500;
       font-size: ${pxToRem(16)};
       line-height: 25px;
@@ -69,7 +67,6 @@ export const FooterContainer = styled.div`
       background-color: transparent;
       border-radius: 10px;
 
-      font-family: 'Poppins';
       font-weight: 500;
       font-size: ${pxToRem(12)};
       letter-spacing: 0.05em;
@@ -83,7 +80,6 @@ export const FooterContainer = styled.div`
       background-color: ${Colors.purple};
       border: none;
       border-radius: 10px;
-      font-family: 'Poppins';
       font-weight: 800;
       font-size: 18px;
       text-align: center;
@@ -109,7 +105,6 @@ export const FooterContainer = styled.div`
     }
 
     p {
-      font-family: 'Poppins';
       font-weight: 800;
       font-size: ${pxToRem(18)};
       line-height: 25px;
@@ -119,7 +114,6 @@ export const FooterContainer = styled.div`
     }
 
     li {
-      font-family: 'Poppins';
       font-weight: 400;
       font-size: ${pxToRem(14)};
       line-height: 25px;
@@ -146,7 +140,6 @@ export const FooterContainer = styled.div`
       margin-bottom: 15px;
 
       h5 {
-        font-family: 'Poppins';
         font-weight: 800;
         font-size: ${pxToRem(18)};
         line-height: 25px;
@@ -175,7 +168,6 @@ export const FooterContainer = styled.div`
     }
 
     p {
-      font-family: 'Poppins';
       font-weight: 400;
       font-size: ${pxToRem(12)};
       line-height: 16px;

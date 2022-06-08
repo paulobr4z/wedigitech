@@ -33,7 +33,7 @@ export function Carousel({
       </div>
       <div className="card">
         {carouselData.map(item => (
-          <Card cardData={item} />
+          <Card cardData={item} key={item.title} />
         ))}
       </div>
     </CarouselContainer>

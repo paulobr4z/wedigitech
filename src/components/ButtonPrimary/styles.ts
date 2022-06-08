@@ -6,11 +6,15 @@ interface IButton {
 }
 
 export const Button = styled.button<IButton>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
   background: linear-gradient(177.65deg, #1DB8FB 1.96%, #158ABC 98.03%);
   border-radius: 5px;
   border: none;
+  outline: none;
   color: ${Colors.white};
-  font-family: 'Poppins', sans-serif;
   font-weight: 900;
 
   ${({ typeButton }) => typeButton === 'small' && css`

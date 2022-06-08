@@ -79,6 +79,26 @@ export const HeaderMenu = styled.div`
       img {
         cursor: pointer;
       }
+
+      .basket {
+        position: relative;
+
+        span {
+          position: absolute;
+          top: -10px;
+          right: -15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #FFFFFF;
+          background-color: red;
+          height: 24px;
+          width: 24px;
+          border-radius: 50%;
+          font-size: 12px;
+          border: 3px solid ${Colors.primary};
+        }
+      }
     }
   }
 `;

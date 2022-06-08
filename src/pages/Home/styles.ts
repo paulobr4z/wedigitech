@@ -169,7 +169,6 @@ export const SearchByPlatform = styled.div`
       }
 
       h4 {
-        font-family: 'Poppins';
         font-weight: 800;
         font-size: ${pxToRem(26)};
         line-height: 34px;
@@ -232,7 +231,6 @@ export const ComingSoon = styled.div`
 
       h1 {
         position: relative;
-        font-family: 'Poppins';
         font-weight: 900;
         font-size: ${pxToRem(46)};
         line-height: 52px;
@@ -257,7 +255,6 @@ export const ComingSoon = styled.div`
 
       h2 {
         position: relative;
-        font-family: 'Poppins';
         font-weight: 900;
         font-size: ${pxToRem(46)};
         line-height: 52px;
@@ -273,7 +270,6 @@ export const ComingSoon = styled.div`
       }
 
       p {
-        font-family: 'Poppins';
         font-style: normal;
         font-weight: 600;
         font-size: ${pxToRem(16)};
@@ -335,7 +331,6 @@ export const OtherHighlights = styled.div`
 
     h2 {
       position: relative;
-      font-family: 'Poppins';
       font-weight: 800;
       font-size: ${pxToRem(34)};
       line-height: 40px;
@@ -357,7 +352,6 @@ export const OtherHighlights = styled.div`
     }
     
     p {
-      font-family: 'Poppins';
       font-weight: 600;
       font-size: ${pxToRem(16)};
       line-height: 28px;

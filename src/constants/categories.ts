@@ -66,7 +66,7 @@ export const gamesData = [
     tag_type: 'discount',
   },
   {
-    developer: ' Ninja Theory',
+    developer: 'Ninja Theory',
     title: "Hellblade: Senua's Sacrifice - PC",
     platform: 'pc_windows',
     old_price: 'R$ 259,90',

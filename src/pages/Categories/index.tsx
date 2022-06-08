@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "../../components/Card";
 import { CheckboxPrimary } from "../../components/CheckboxPrimary";
+import { ChooseVideoGame } from "../../components/ChooseVideoGame";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { gamesData } from "../../constants/categories";
@@ -13,11 +14,9 @@ import {
 
 export function Categories() {
   const [gameStock, setGameStock] = useState(gamesData);
-  const [lastGameStock, setLastGameStock] = useState<ICardGamesData[]>(gamesData);
   const [filterValue, setFilterValue] = useState<String[]>([]);
   const [sideMenuIsOpen, setSideMenuIsOpen] = useState(false);
-
-  console.log(filterValue)
+  const [alphabeticalOrder, setAlphabeticalOrder] = useState('');
 
   function handleLoadMoreGames() {
     setGameStock([...gameStock, ...gamesData])
@@ -32,21 +31,37 @@ export function Categories() {
     }
   }
 
-  function filterGamesByType() {    
-    const filteredResults = gamesData.filter(item =>
-      filterValue.some(val => item.tag_type === val)
-    );
+  useEffect(() => {
+    function filterGamesByType() {    
+      const filteredResults = gamesData.filter(item =>
+        filterValue.some(val => item.tag_type === val)
+      );
+  
+      if (filteredResults.length !== 0) {
+        setGameStock(filteredResults);
+      } else {
+        setGameStock(gamesData);
+      }
+    }
+    
+    filterGamesByType();
+  }, [filterValue]);
 
-    if (filteredResults.length !== 0) {
-      setGameStock(filteredResults);
-    } else {
-      setGameStock(gamesData);
+  function filterGamesByAlphabeticalOrder() {
+    if (alphabeticalOrder === '') {
+      const alphabeticalOrder = gamesData.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? 1 : - 1);
+      setAlphabeticalOrder('sort');
+      setGameStock(alphabeticalOrder);
+    }
+    if (alphabeticalOrder === 'sort') {
+      const alphabeticalOrder = gamesData.sort((a, b) => a.title.toLowerCase() > b.title.toLowerCase() ? -1 : 1);
+      setAlphabeticalOrder('reverse');
+      setGameStock(alphabeticalOrder);
+    }
+    if (alphabeticalOrder === 'reverse') {
+      window.location.reload();
     }
   }
-
-  useEffect(() => {
-    filterGamesByType();
-  }, [filterValue])
 
   return (
     <CategoriesContainer>
@@ -72,14 +87,27 @@ export function Categories() {
             <p>Filtrar Busca</p>
           </div>
           <h6>Encontramos 150 jogos para você se divertir</h6>
-          <div className="order">
+          <div className="order" onClick={filterGamesByAlphabeticalOrder}>
             <img src="/assets/icons/order.svg" alt="order" />
             <p>Ordenar Por</p>
           </div>
         </div>
+        <div className="games-filter-mobile">
+          <h6>Encontramos 150 jogos para você se divertir</h6>
+          <span>
+            <div className="filter" onClick={() => setSideMenuIsOpen(!sideMenuIsOpen)}>
+              <img src="/assets/icons/filter.svg" alt="filter" />
+              <p>Filtrar Busca</p>
+            </div>
+            <div className="order" onClick={filterGamesByAlphabeticalOrder}>
+              <img src="/assets/icons/order.svg" alt="order" />
+              <p>Ordenar Por</p>
+            </div>
+          </span>
+        </div>
         <div className="games">
           <div className="side-filter">
-            <nav>
+            {/* <nav>
               <h6>Plataforma</h6>
               <span>
                 <CheckboxPrimary
@@ -137,7 +165,7 @@ export function Categories() {
                 />
                 <p>PC Mac</p>
               </span>
-            </nav>
+            </nav> */}
             <nav>
               <h6>Extras</h6>
               <span>
@@ -169,89 +197,88 @@ export function Categories() {
                 <p>Pré Lançamento/Em breve</p>
               </span>
             </nav>
-            <nav>
+            {/* <nav>
               <h6>Desenvolvedor</h6>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="square"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Ubisoft</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="square"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Crystal Dynamics</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="square"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>FromSoftware</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="square"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Naughty Dog</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="square"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Bethesda Sofworks</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="square"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                />
                 <p>Capcom</p>
               </span>
-            </nav>
-            <nav>
+            </nav> */}
+            {/* <nav>
               <h6>Ordenar por</h6>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="round"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Mais relevantes</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="round"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Menor Preço</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="round"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Maior Preço</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="round"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Mais Recentes</p>
               </span>
               <span>
-                {/* <CheckboxPrimary
+                <CheckboxPrimary
                   type="round"
-                  // handleCheck={() => handleFilterValue('Google Stadia')}
-                /> */}
+                  handleCheck={() => handleFilterValue('Google Stadia')}
+                />
                 <p>Mais Antigos</p>
               </span>
-            </nav>
+            </nav> */}
           </div>
           <div className="games-store-content">
             {gameStock.map((game: ICardGamesData, index: number) => (
@@ -266,7 +293,11 @@ export function Categories() {
           <button>Carregar mais...</button>
         </div>
       </GamesContainer>
+
+      <ChooseVideoGame />
+        
       <Footer />
+      
     </CategoriesContainer>    
   )  
 }

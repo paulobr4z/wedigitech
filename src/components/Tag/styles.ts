@@ -14,7 +14,6 @@ export const TagContainer = styled.div<ITag>`
   padding: 5px 15px;
   border-radius: 100px;
 
-  font-family: 'Poppins';
   font-weight: 800;
   font-size: ${pxToRem(14)};
   text-align: center;
